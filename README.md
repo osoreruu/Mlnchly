@@ -4,14 +4,19 @@
 
 ```bash```
 
-git clone https://github.com/osoreruu/Mlnchly
+git clone https://github.com/osoreruu/Mlnchly.git
 
 pip install -r requirements.txt
 
-Usage:
+***Usage***:
 
 python main.py
 
-...then select the desired tool.
+Then select desire tool
 
 ***Advantages of my tool***: modularity, lightweight design, and speed.
+
+***Function's***:
+Hashing: **SHA1**, **SHA256**, **SHA3_384**, **SHA3_512**, **Blake2b**
+Symmetric Encrypt: **AES256**, **ChaCha20**
+Asymmetric Encrypt: **RSA2048**, **ECC256**
