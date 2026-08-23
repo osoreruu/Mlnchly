@@ -6,7 +6,7 @@ from ui import print_banner
 
 init(autoreset=True)
 
-def run_crypto():
+def run_cryptosym():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
 		1. AES256 (PKCS7)

@@ -7,11 +7,11 @@ init(autoreset=True)
 def run_hash():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
-		1. sha1
-		2. sha256
-		3. sha3_384
-		4. sha3_512
-		5. blake2b
+		1. SHA1
+		2. SHA256
+		3. SHA3_384
+		4. SHA3_512
+		5. Blake2b
 		""")
 	while True:
 		try:
