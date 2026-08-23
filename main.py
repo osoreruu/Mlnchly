@@ -11,7 +11,13 @@ def main():
 		1. Text2Hash
 		2. SymmetricCipher
 		""")
-	choice = int(input(Fore.CYAN + Style.BRIGHT + "Select func. 1 or 2: "))
+	while True:
+		try:
+			choice = int(input(Fore.CYAN + Style.BRIGHT + "Select func. 1 or 2: "))
+			break
+		except ValueError:
+			print(Fore.RED + Style.BRIGHT + "Error! Write number, not text")
+
 	if choice == 1:
 		run_hash()
 	elif choice == 2:

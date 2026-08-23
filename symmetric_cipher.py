@@ -12,20 +12,25 @@ def run_crypto():
 		1. AES256 (PKCS7)
 		2. ChaCha20
 		""")
-	choice = int(input(Fore.BLUE + Style.BRIGHT + "Choose crypto algorithm: "))
+	while True:
+		try:
+			choice = int(input(Fore.CYAN + Style.BRIGHT + "Choose crypto algorithm: "))
+			break
+		except ValueError:
+			print(Fore.RED + Style.BRIGHT + "Error! Write number, not text")
 
 	if choice == 1:
+		while True:	
+			IV = input(Fore.CYAN + Style.BRIGHT + "Write your IV (16 symbols): ")
+			iv_bytes = IV.encode('utf-8')
 
-		IV = input(Fore.BLUE + Style.BRIGHT + "Write your IV (16 symbols): ")
-		iv_bytes = IV.encode('utf-8')
+			if len(iv_bytes) == 16:
+				print(Fore.GREEN + Style.BRIGHT + "Good!")
+				break
+			else:
+				print(Fore.RED + Style.BRIGHT + "Error: IV length must be 16!")
 
-		if len(iv_bytes) != 16:
-			print(Fore.RED + Style.BRIGHT + "Error: IV length must be 16!")
-			exit()
-		else:
-			print(Fore.GREEN + Style.BRIGHT + "Good!")
-
-		ciphertext = input(Fore.BLUE + Style.BRIGHT + "Write your text: ")
+		ciphertext = input(Fore.CYAN + Style.BRIGHT + "Write your text: ")
 		text_bytes = ciphertext.encode('UTF-8')
 
 		key = os.urandom(32)
@@ -41,16 +46,17 @@ def run_crypto():
 		print(Fore.GREEN + Style.BRIGHT + f"[+] Key (hex): {key.hex()}")
 
 	elif choice == 2:
-		nonce = input(Fore.BLUE + Style.BRIGHT + "Write your nonce (16 symbols): ")
-		nonce_bytes = nonce.encode('UTF-8')
+		while True:
+			nonce = input(Fore.CYAN + Style.BRIGHT + "Write your nonce (16 symbols): ")
+			nonce_bytes = nonce.encode('UTF-8')
     
-		if len(nonce_bytes) != 16:
-			print(Fore.RED + Style.BRIGHT + "Error: nonce length must be 16!")
-			exit()
-		else:
-			print(Fore.GREEN + Style.BRIGHT + "Good!")
+			if len(nonce_bytes) == 16:
+				print(Fore.GREEN + Style.BRIGHT + "Good!")
+				break
+			else:
+				print(Fore.RED + Style.BRIGHT + "Error: nonce length must be 16!")
 
-		text = input(Fore.BLUE + Style.BRIGHT + "Write your text: ")
+		text = input(Fore.CYAN + Style.BRIGHT + "Write your text: ")
 		text_bytes = text.encode('UTF-8')
 		key = os.urandom(32)
 

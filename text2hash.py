@@ -13,8 +13,15 @@ def run_hash():
 		4. sha3_512
 		5. blake2b
 		""")
-	choice = int(input(Fore.CYAN + Style.BRIGHT + "Write a hash func. number: "))
+	while True:
+		try:
+			choice = int(input(Fore.CYAN + Style.BRIGHT + "Write a hash func. number: "))
+			break
+		except ValueError:
+			print(Fore.RED + Style.BRIGHT + "Error! Write number, not text!")
+
 	text = input(Fore.CYAN + Style.BRIGHT + "Write your phrase: ").encode('utf-8')
+
 	if choice == 1:
 		print(Fore.GREEN + Style.BRIGHT + f"Result: {hashlib.sha1(text).hexdigest()}")
 	elif choice == 2:
