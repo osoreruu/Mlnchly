@@ -1,21 +1,11 @@
 import hashlib
 from colorama import init, Fore, Style
+from ui import print_banner
 
 init(autoreset=True)
 
 def run_hash():
-	print(Fore.MAGENTA + Style.BRIGHT + """
-	 ███▄ ▄███▓ ██▓     ███▄    █  ▄████▄   ██░ ██  ██▓   ▓██   ██▓
-	▓██▒▀█▀ ██▒▓██▒     ██ ▀█   █ ▒██▀ ▀█  ▓██░ ██▒▓██▒    ▒██  ██▒
-	▓██    ▓██░▒██░    ▓██  ▀█ ██▒▒▓█    ▄ ▒██▀▀██░▒██░     ▒██ ██░
-	▒██    ▒██ ▒██░    ▓██▒  ▐▌██▒▒▓▓▄ ▄██▒░▓█ ░██ ▒██░     ░ ▐██▓░
-	▒██▒   ░██▒░██████▒▒██░   ▓██░▒ ▓███▀ ░░▓█▒░██▓░██████▒ ░ ██▒▓░
-	░ ▒░   ░  ░░ ▒░▓  ░░ ▒░   ▒ ▒ ░ ░▒ ▒  ░ ▒ ░░▒░▒░ ▒░▓  ░  ██▒▒▒ 
-	░  ░      ░░ ░ ▒  ░░ ░░   ░ ▒░  ░  ▒    ▒ ░▒░ ░░ ░ ▒  ░▓██ ░▒░ 
-	░      ░     ░ ░      ░   ░ ░ ░         ░  ░░ ░  ░ ░   ▒ ▒ ░░  
- 	      ░       ░  ░         ░ ░ ░       ░  ░  ░    ░  ░░ ░     
-		                      ░                        ░ ░
-		""")
+	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
 		1. sha1
 		2. sha256
@@ -24,7 +14,7 @@ def run_hash():
 		5. blake2b
 		""")
 	choice = int(input(Fore.CYAN + Style.BRIGHT + "Write a hash func. number: "))
-	text = input(Fore.CYAN + Style.BRIGHT + "Write you'r phrase: ").encode('utf-8')
+	text = input(Fore.CYAN + Style.BRIGHT + "Write your phrase: ").encode('utf-8')
 	if choice == 1:
 		print(Fore.GREEN + Style.BRIGHT + f"Result: {hashlib.sha1(text).hexdigest()}")
 	elif choice == 2:

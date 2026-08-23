@@ -2,22 +2,12 @@ import os
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 from colorama import init, Fore, Style
+from ui import print_banner
 
 init(autoreset=True)
 
 def run_crypto():
-	print(Fore.MAGENTA + Style.BRIGHT + """
-	 ███▄ ▄███▓ ██▓     ███▄    █  ▄████▄   ██░ ██  ██▓   ▓██   ██▓
-	▓██▒▀█▀ ██▒▓██▒     ██ ▀█   █ ▒██▀ ▀█  ▓██░ ██▒▓██▒    ▒██  ██▒
-	▓██    ▓██░▒██░    ▓██  ▀█ ██▒▒▓█    ▄ ▒██▀▀██░▒██░     ▒██ ██░
-	▒██    ▒██ ▒██░    ▓██▒  ▐▌██▒▒▓▓▄ ▄██▒░▓█ ░██ ▒██░     ░ ▐██▓░
-	▒██▒   ░██▒░██████▒▒██░   ▓██░▒ ▓███▀ ░░▓█▒░██▓░██████▒ ░ ██▒▓░
-	░ ▒░   ░  ░░ ▒░▓  ░░ ▒░   ▒ ▒ ░ ░▒ ▒  ░ ▒ ░░▒░▒░ ▒░▓  ░  ██▒▒▒ 
-	░  ░      ░░ ░ ▒  ░░ ░░   ░ ▒░  ░  ▒    ▒ ░▒░ ░░ ░ ▒  ░▓██ ░▒░ 
-	░      ░     ░ ░      ░   ░ ░ ░         ░  ░░ ░  ░ ░   ▒ ▒ ░░  
-	       ░       ░  ░         ░ ░ ░       ░  ░  ░    ░  ░░ ░     
- 	                             ░                        ░ ░
-		""")
+	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
 		1. AES256 (PKCS7)
 		2. ChaCha20
@@ -26,7 +16,7 @@ def run_crypto():
 
 	if choice == 1:
 
-		IV = input(Fore.BLUE + Style.BRIGHT + "Write you'r IV (16 symbols): ")
+		IV = input(Fore.BLUE + Style.BRIGHT + "Write your IV (16 symbols): ")
 		iv_bytes = IV.encode('utf-8')
 
 		if len(iv_bytes) != 16:
@@ -35,7 +25,7 @@ def run_crypto():
 		else:
 			print(Fore.GREEN + Style.BRIGHT + "Good!")
 
-		ciphertext = input(Fore.BLUE + Style.BRIGHT + "Write you'r text: ")
+		ciphertext = input(Fore.BLUE + Style.BRIGHT + "Write your text: ")
 		text_bytes = ciphertext.encode('UTF-8')
 
 		key = os.urandom(32)
@@ -51,7 +41,7 @@ def run_crypto():
 		print(Fore.GREEN + Style.BRIGHT + f"[+] Key (hex): {key.hex()}")
 
 	elif choice == 2:
-		nonce = input(Fore.BLUE + Style.BRIGHT + "Write you'r nonce (16 symbols): ")
+		nonce = input(Fore.BLUE + Style.BRIGHT + "Write your nonce (16 symbols): ")
 		nonce_bytes = nonce.encode('UTF-8')
     
 		if len(nonce_bytes) != 16:
@@ -60,7 +50,7 @@ def run_crypto():
 		else:
 			print(Fore.GREEN + Style.BRIGHT + "Good!")
 
-		text = input(Fore.BLUE + Style.BRIGHT + "Write you'r text: ")
+		text = input(Fore.BLUE + Style.BRIGHT + "Write your text: ")
 		text_bytes = text.encode('UTF-8')
 		key = os.urandom(32)
 
