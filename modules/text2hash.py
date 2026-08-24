@@ -1,17 +1,19 @@
 import hashlib
 from colorama import init, Fore, Style
-from ui import print_banner
+from modules.ui import print_banner
 
 init(autoreset=True)
 
 def run_hash():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
-		1. SHA1
-		2. SHA256
-		3. SHA3_384
-		4. SHA3_512
-		5. Blake2b
+		╔═════════════╗
+		║ 1. SHA1     ║
+		║ 2. SHA256   ║
+		║ 3. SHA3_384 ║
+		║ 4. SHA3_512 ║
+		║ 5. Blake2b  ║
+		╚═════════════╝
 		""")
 	while True:
 		try:

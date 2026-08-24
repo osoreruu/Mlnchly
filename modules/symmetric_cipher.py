@@ -2,15 +2,17 @@ import os
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 from colorama import init, Fore, Style
-from ui import print_banner
+from modules.ui import print_banner
 
 init(autoreset=True)
 
 def run_cryptosym():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
-		1. AES256 (PKCS7)
-		2. ChaCha20
+	  ╔═══════════════════╗
+	  ║ 1. AES256 (PKCS7) ║
+	  ║ 2. ChaCha20       ║
+	  ╚═══════════════════╝
 		""")
 	while True:
 		try:
@@ -21,7 +23,7 @@ def run_cryptosym():
 
 	if choice == 1:
 		while True:	
-			IV = input(Fore.CYAN + Style.BRIGHT + "Write your IV (16 symbols): ")
+			IV = input(Fore.CYAN + Style.BRIGHT + "Write your IV (16 symbols): ").strip()
 			iv_bytes = IV.encode('utf-8')
 
 			if len(iv_bytes) == 16:
@@ -30,7 +32,7 @@ def run_cryptosym():
 			else:
 				print(Fore.RED + Style.BRIGHT + "Error: IV length must be 16!")
 
-		ciphertext = input(Fore.CYAN + Style.BRIGHT + "Write your text: ")
+		ciphertext = input(Fore.CYAN + Style.BRIGHT + "Write your text: ").strip()
 		text_bytes = ciphertext.encode('UTF-8')
 
 		key = os.urandom(32)
