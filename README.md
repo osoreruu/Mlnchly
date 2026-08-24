@@ -4,11 +4,11 @@
 
 git clone https://github.com/osoreruu/Mlnchly.git
 
+cd Mlnchly
+
 pip install -r requirements.txt
 
 ***Usage***:
-
-cd Mlnchly
 
 python main.py
 

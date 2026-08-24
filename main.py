@@ -17,11 +17,13 @@ def main():
 	  ║ 3. AsymmetricCrypt   ║
 	  ║ 4. SymmetricDecrypt  ║
 	  ║ 5. AsymmetricDecrypt ║
+	  ║ 6. About	         ║
+	  ║ 7. Credits           ║
 	  ╚══════════════════════╝
 		""")
 	while True:
 		try:
-			choice = int(input(Fore.CYAN + Style.BRIGHT + "Select func. 1, 2, 3, 4 or 5: "))
+			choice = int(input(Fore.CYAN + Style.BRIGHT + "Select function: "))
 			break
 		except ValueError:
 			print(Fore.RED + Style.BRIGHT + "Error! Write number, not text")
@@ -36,6 +38,16 @@ def main():
 		run_decryptsym()
 	elif choice == 5:
 		run_decryptasy()
+	elif choice == 6:
+		print(Fore.CYAN + Style.BRIGHT + """
+			Mlnchly is a Python tool for working with hashes and cryptography; 
+			it supports a wide range of algorithms and handles both encryption and decryption.
+			""")
+	elif choice == 7:
+		print(Fore.CYAN + Style.BRIGHT + """
+			Sole creator: deferred. 
+			DM: Telegram @ddeferred
+			""")
 	else:
 		print(Fore.RED + Style.BRIGHT + "Wrong number!")
 
