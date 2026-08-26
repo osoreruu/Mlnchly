@@ -21,3 +21,4 @@ Hashing: **SHA1**, **SHA256**, **SHA3_384**, **SHA3_512**, **Blake2b**
 Symmetric Encrypt: **AES256**, **ChaCha20**
 Asymmetric Encrypt: **RSA2048**, **ECC256**
 Decrypting of **Symmetric and Asymmetric Encryption's**
+Generating passsword of every length, used safe **import secrets**.
