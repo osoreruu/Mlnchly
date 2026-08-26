@@ -99,3 +99,7 @@ $RECYCLE.BIN/
 # Linux / Arch Linux specific
 .directory
 *~
+
+
+# =================( OTHER )=================
+rockyou/

@@ -6,6 +6,8 @@ from modules.ui import print_banner
 from modules.decrypt_sym import run_decryptsym
 from modules.decrypt_asy import run_decryptasy
 from modules.generate_pswrd import run_genpswrd
+from modules.bruteforce import run_brtfrce
+
 init(autoreset=True)
 
 def main():
@@ -18,15 +20,16 @@ def main():
 	  ║ 4. SymmetricDecrypt  ║
 	  ║ 5. AsymmetricDecrypt ║
 	  ║ 6. GeneratePassword  ║
-	  ║ 7. About	         ║
-	  ║ 8. Credits           ║
+	  ║ 7. BruteForcer       ║
+	  ║ 8. About	         ║
+	  ║ 9. Credits           ║
 	  ╚══════════════════════╝
 		""")
 	while True:
 		try:
 			choice = int(input(Fore.CYAN + Style.BRIGHT + "Select function: "))
-			if choice not in range(1, 8):
-				print(Fore.RED + Style.BRIGHT + "Choose function 1-7!")
+			if choice not in range(1, 9):
+				print(Fore.RED + Style.BRIGHT + "Choose function 1-9!")
 				continue
 			break
 		except ValueError:
@@ -45,11 +48,13 @@ def main():
 	elif choice == 6:
 		run_genpswrd()
 	elif choice == 7:
+		run_brtfrce()
+	elif choice == 8:
 		print(Fore.CYAN + Style.BRIGHT + """
 			Mlnchly is a Python tool for working with hashes and cryptography; 
 			it supports a wide range of algorithms and handles both encryption and decryption.
 		""")
-	elif choice == 8:
+	elif choice == 9:
 		print(Fore.CYAN + Style.BRIGHT + """
 			Sole creator: deferred. 
 			DM: Telegram @ddeferred
