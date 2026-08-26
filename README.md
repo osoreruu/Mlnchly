@@ -1,3 +1,5 @@
+[![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen?style=for-the-badge&logo=pytest)](https://github.com/osoreruu/Mlnchly)
+
 ***Mlnchly*** is a crypto tool for calculating **SHA-1**, **SHA-256**, **Blake2b**, and **SHA-3** hashes (including **384**-bit and **512**-bit versions). ***Mlnchly*** also supports data encryption using **AES-256** and **ChaCha20**; while the key is generated randomly, you can also provide your own **IV**, and the key remains visible after encryption.
 
 ***Installation***:

@@ -21,7 +21,6 @@ def run_decryptasy():
 			print(Fore.RED + Style.BRIGHT + "Error! Write number, not text.")
 
 	if choice == 1:
-		# Запрос приватного ключа в формате PEM (многострочный ввод или в одну строку через \n)
 		print(Fore.CYAN + Style.BRIGHT + "Paste your Private Key (PEM format, end with an empty line or press Ctrl+D / enter 'END'):")
 		lines = []
 		while True:
@@ -43,7 +42,6 @@ def run_decryptasy():
 			print(Fore.RED + Style.BRIGHT + f"Error loading private key: {e}")
 			return
 
-		# Запрос зашифрованного текста в hex
 		while True:
 			ciphertext_hex = input(Fore.CYAN + Style.BRIGHT + "Write your hex Ciphertext: ").strip()
 			try:
@@ -66,7 +64,6 @@ def run_decryptasy():
 			print(Fore.RED + Style.BRIGHT + f"\n[-] Decryption failed! Error: {e}")
 
 	elif choice == 2:
-		# Проверка подписи ECC требует публичный ключ, сообщение и саму подпись
 		print(Fore.CYAN + Style.BRIGHT + "Paste your Public Key (PEM format, end with 'END' or empty line):")
 		lines = []
 		while True:

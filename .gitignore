@@ -1,10 +1,101 @@
-# python cache
+# =================( PYTHON )=================
+# Byte-code / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# virtual environment
-venv/
-env/
+# C extensions
+*.so
+
+# Distribution / packaging
+.bin/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django / Flask / Celery (на будущее)
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+instance/
+.webassets-cache
+
+# =================( ENVIRONMENT )=================
+# Virtual environments
 .env
- 
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# =================( EDITORS & IDEs )=================
+# VS Code / VSCodium
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# PyCharm / JetBrains
+.idea/
+
+# Vim / Nano / Emacs
+*~
+.#*
+*.swp
+*.swo
+Session.vim
+.netrwhist
+
+# =================( OPERATING SYSTEMS )=================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux / Arch Linux specific
+.directory
+*~
