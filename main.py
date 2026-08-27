@@ -8,6 +8,7 @@ from modules.decrypt_asy import run_decryptasy
 from modules.generate_pswrd import run_genpswrd
 from modules.bruteforce import run_brtfrce
 from modules.generate_UA import run_genUA
+from modules.robots_parser import run_robots_parser
 
 init(autoreset=True)
 
@@ -23,8 +24,9 @@ def main():
 	  ║ 6. GeneratePassword   ║
 	  ║ 7. BruteForcer        ║
 	  ║ 8. Generate UserAgent ║
-	  ║ 9. About	          ║
-	  ║ 10. Credits           ║
+	  ║ 9. Robots.txt parser  ║
+	  ║ 10. About	          ║
+	  ║ 11. Credits           ║
 	  ╚═══════════════════════╝
 		""")
 	while True:
@@ -54,11 +56,13 @@ def main():
 	elif choice == 8:
 		run_genUA()
 	elif choice == 9:
+		run_robots_parser()
+	elif choice == 10:
 		print(Fore.CYAN + Style.BRIGHT + """
 			Mlnchly is a Python tool for working with hashes and cryptography; 
 			it supports a wide range of algorithms and handles both encryption and decryption.
 		""")
-	elif choice == 10:
+	elif choice == 11:
 		print(Fore.CYAN + Style.BRIGHT + """
 			Sole creator: deferred. 
 			DM: Telegram @ddeferred
