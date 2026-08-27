@@ -18,4 +18,4 @@ def run_robots_parser():
 		else:
 			print(f"robots.txt not found! Error: {response.status_code}")
 	except httpx.RequestError as e:
-		print(Fore.RED + Style.BRIGHT + f"[-] Connection error: {e}")
+		print(Fore.RED + Style.BRIGHT + f"Connection Error: {e})")
