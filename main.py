@@ -7,29 +7,31 @@ from modules.decrypt_sym import run_decryptsym
 from modules.decrypt_asy import run_decryptasy
 from modules.generate_pswrd import run_genpswrd
 from modules.bruteforce import run_brtfrce
+from modules.generate_UA import run_genUA
 
 init(autoreset=True)
 
 def main():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
-	  ╔══════════════════════╗
-	  ║ 1. Text2Hash         ║
-	  ║ 2. SymmetricCrypt    ║
-	  ║ 3. AsymmetricCrypt   ║
-	  ║ 4. SymmetricDecrypt  ║
-	  ║ 5. AsymmetricDecrypt ║
-	  ║ 6. GeneratePassword  ║
-	  ║ 7. BruteForcer       ║
-	  ║ 8. About	         ║
-	  ║ 9. Credits           ║
-	  ╚══════════════════════╝
+	  ╔═══════════════════════╗
+	  ║ 1. Text2Hash          ║
+	  ║ 2. SymmetricCrypt     ║
+	  ║ 3. AsymmetricCrypt    ║
+	  ║ 4. SymmetricDecrypt   ║
+	  ║ 5. AsymmetricDecrypt  ║
+	  ║ 6. GeneratePassword   ║
+	  ║ 7. BruteForcer        ║
+	  ║ 8. Generate UserAgent ║
+	  ║ 9. About	          ║
+	  ║ 10. Credits           ║
+	  ╚═══════════════════════╝
 		""")
 	while True:
 		try:
 			choice = int(input(Fore.CYAN + Style.BRIGHT + "Select function: "))
-			if choice not in range(1, 9):
-				print(Fore.RED + Style.BRIGHT + "Choose function 1-9!")
+			if choice not in range(1, 10):
+				print(Fore.RED + Style.BRIGHT + "Choose function 1-10!")
 				continue
 			break
 		except ValueError:
@@ -50,11 +52,13 @@ def main():
 	elif choice == 7:
 		run_brtfrce()
 	elif choice == 8:
+		run_genUA()
+	elif choice == 9:
 		print(Fore.CYAN + Style.BRIGHT + """
 			Mlnchly is a Python tool for working with hashes and cryptography; 
 			it supports a wide range of algorithms and handles both encryption and decryption.
 		""")
-	elif choice == 9:
+	elif choice == 10:
 		print(Fore.CYAN + Style.BRIGHT + """
 			Sole creator: deferred. 
 			DM: Telegram @ddeferred
