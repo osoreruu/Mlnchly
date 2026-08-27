@@ -25,7 +25,10 @@ def run_brtfrce():
             print(Fore.RED + Style.BRIGHT + "Select number, not text.")
 
     if choice == 1:
-        path = "rockyou/rockyou.txt"
+        path = input(Fore.CYAN + Style.BRIGHT + "Write a path to rockyou.txt [default: rockyou/rockyou.txt]: ").strip()
+        if not path:
+            path = "rockyou/rockyou.txt"
+
         basehash = input(Fore.CYAN + Style.BRIGHT + "Write your hash to Dictionary Brute: ").strip().lower()
         
         print(Fore.CYAN + Style.BRIGHT + """
