@@ -34,8 +34,8 @@ Then select **desire** tool by numbers
 
 **Functions**:
 
-**Hashing**: **SHA1**, **SHA256**, **SHA3_384**, **SHA3_512**, **Blake2b**
-**Symmetric** Encrypt: **AES256**, **ChaCha20**
+**Hashing**: **MD5** **SHA1**, **SHA256**, **SHA3_384**, **SHA3_512**, **Blake2b**
+**Symmetric** Encrypt: **AES256GCM**, **ChaCha20Poly1305**
 **Asymmetric** Encrypt: **RSA2048**, **ECC256**
 **Decrypting** of **Symmetric and Asymmetric Encryption's**
 **Generating password** of every length, used safe **import secrets**.
