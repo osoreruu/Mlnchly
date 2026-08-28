@@ -40,6 +40,9 @@ Then select **desire** tool by numbers
 **Decrypting** of **Symmetric and Asymmetric Encryption's**
 **Generating password** of every length, used safe **import secrets**.
 **Brute-Forcing** password with **RockYou.txt** and dump method.
+**Generating UserAgents** with **fake_useragent** library.
+**Parser of robots.txt** with requests for parsing file used for other parsers.
+**Port Scanner** using for scan port and determine whether it is open or not.
 
 ---
 

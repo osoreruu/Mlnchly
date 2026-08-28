@@ -9,6 +9,7 @@ from modules.generate_pswrd import run_genpswrd
 from modules.bruteforce import run_brtfrce
 from modules.generate_UA import run_genUA
 from modules.robots_parser import run_robots_parser
+from modules.portscanner import run_portscnnr
 
 init(autoreset=True)
 
@@ -25,15 +26,16 @@ def main():
 	  ║ 7. BruteForcer        ║
 	  ║ 8. Generate UserAgent ║
 	  ║ 9. Robots.txt parser  ║
-	  ║ 10. About	          ║
-	  ║ 11. Credits           ║
+	  ║ 10. Port Scanner      ║
+	  ║ 11. About	          ║
+	  ║ 12. Credits           ║
 	  ╚═══════════════════════╝
 		""")
 	while True:
 		try:
 			choice = int(input(Fore.CYAN + Style.BRIGHT + "Select function: "))
-			if choice not in range(1, 10):
-				print(Fore.RED + Style.BRIGHT + "Choose function 1-10!")
+			if choice not in range(1, 13):
+				print(Fore.RED + Style.BRIGHT + "Choose function 1-12!")
 				continue
 			break
 		except ValueError:
@@ -58,11 +60,13 @@ def main():
 	elif choice == 9:
 		run_robots_parser()
 	elif choice == 10:
+		run_portscnnr()
+	elif choice == 11:
 		print(Fore.CYAN + Style.BRIGHT + """
 			Mlnchly is a Python tool for working with hashes and cryptography; 
 			it supports a wide range of algorithms and handles both encryption and decryption.
 		""")
-	elif choice == 11:
+	elif choice == 12:
 		print(Fore.CYAN + Style.BRIGHT + """
 			Sole creator: deferred. 
 			DM: Telegram @ddeferred
