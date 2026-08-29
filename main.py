@@ -31,6 +31,7 @@ def main():
 	  ║ 12. Credits           ║
 	  ╚═══════════════════════╝
 		""")
+
 	while True:
 		try:
 			choice = int(input(Fore.CYAN + Style.BRIGHT + "Select function: "))
@@ -41,38 +42,28 @@ def main():
 		except ValueError:
 			print(Fore.RED + Style.BRIGHT + "Error! Write number, not text")
 
-	if choice == 1:
-		run_hash()
-	elif choice == 2:
-		run_cryptosym()
-	elif choice == 3:
-		run_cryptoasy()
-	elif choice == 4:
-		run_decryptsym()
-	elif choice == 5:
-		run_decryptasy()
-	elif choice == 6:
-		run_genpswrd()
-	elif choice == 7:
-		run_brtfrce()
-	elif choice == 8:
-		run_genUA()
-	elif choice == 9:
-		run_robots_parser()
-	elif choice == 10:
-		run_portscnnr()
-	elif choice == 11:
-		print(Fore.CYAN + Style.BRIGHT + """
+	functions = {
+		1: run_hash,
+		2: run_cryptosym,
+		3: run_cryptoasy,
+		4: run_decryptsym,
+		5: run_decryptasy,
+		6: run_genpswrd,
+		7: run_brtfrce,
+		8: run_genUA,
+		9: run_robots_parser,
+		10: run_portscnnr,
+		11: lambda: print(Fore.CYAN + Style.BRIGHT + """
 			Mlnchly is a Python tool for working with hashes and cryptography; 
 			it supports a wide range of algorithms and handles both encryption and decryption.
-		""")
-	elif choice == 12:
-		print(Fore.CYAN + Style.BRIGHT + """
+		"""),
+		12: lambda: print(Fore.CYAN + Style.BRIGHT + """
 			Sole creator: deferred. 
 			DM: Telegram @ddeferred
 		""")
-	else:
-		print(Fore.RED + Style.BRIGHT + "Wrong number!")
+	}
+
+	functions[choice]()
 
 if __name__ == "__main__":
 	main()

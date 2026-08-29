@@ -8,10 +8,10 @@ init(autoreset=True)
 def run_cryptoasy():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
-		╔═════════════════════╗
-		║ 1. RSA2048 (Encrypt)║
-		║ 2. ECC256 (Sign)    ║
-		╚═════════════════════╝
+		╔══════════════════════╗
+		║ 1. RSA2048 (Encrypt) ║
+		║ 2. ECDSA P256 (Sign) ║
+		╚══════════════════════╝
 		""")
 	while True:
 		try:
@@ -21,59 +21,32 @@ def run_cryptoasy():
 			print(Fore.RED + Style.BRIGHT + "Error! Write number, not text.")
 
 	if choice == 1:
-		private_key = rsa.generate_private_key(
-			public_exponent=65537,
-			key_size=2048
-		)
+		private_key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
 		public_key = private_key.public_key()
 		
-		pem_private = private_key.private_bytes(
-			encoding=serialization.Encoding.PEM,
-			format=serialization.PrivateFormat.PKCS8,
-			encryption_algorithm=serialization.NoEncryption()
-		)
-		pem_public = public_key.public_bytes(
-			encoding=serialization.Encoding.PEM,
-			format=serialization.PublicFormat.SubjectPublicKeyInfo
-		)
+		pem_private = private_key.private_bytes(encoding=serialization.Encoding.PEM,format=serialization.PrivateFormat.PKCS8,encryption_algorithm=serialization.NoEncryption())
+		pem_public = public_key.public_bytes(encoding=serialization.Encoding.PEM, format=serialization.PublicFormat.SubjectPublicKeyInfo)
 
 		message = input(Fore.CYAN + Style.BRIGHT + "Write your text to encrypt: ").encode('utf-8')
-		ciphertext = public_key.encrypt(
-					message,
-					padding.OAEP(
-						mgf=padding.MGF1(algorithm=hashes.SHA256()),
-						algorithm=hashes.SHA256(),
-						label=None
-					)
-				)
-		print(Fore.GREEN + Style.BRIGHT + f"\n[+] Private Key (PEM):\n{pem_private.decode('utf-8')}")
-		print(Fore.GREEN + Style.BRIGHT + f"\n[+] Public Key (PEM):\n{pem_public.decode('utf-8')}")
+		if len(message) >= 190:
+			print(Fore.RED + Style.BRIGHT + "Your text isn't 190 bytes.")
+			return
+			
+		ciphertext = public_key.encrypt(message, padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA256()), algorithm=hashes.SHA256(), label=None))
+		print(Fore.GREEN + Style.BRIGHT + f"\n[+] Private Key (PEM):{pem_private.decode('utf-8')}")
+		print(Fore.GREEN + Style.BRIGHT + f"\n[+] Public Key (PEM):{pem_public.decode('utf-8')}")
 		print(Fore.GREEN + Style.BRIGHT + f"[+] Ciphertext (hex): {ciphertext.hex()}")
 
 	elif choice == 2:
 		private_key = ec.generate_private_key(ec.SECP256R1())
 		public_key = private_key.public_key()
 		
-		pem_private = private_key.private_bytes(
-			encoding=serialization.Encoding.PEM,
-			format=serialization.PrivateFormat.PKCS8,
-			encryption_algorithm=serialization.NoEncryption()
-		)
-		pem_public = public_key.public_bytes(
-			encoding=serialization.Encoding.PEM,
-			format=serialization.PublicFormat.SubjectPublicKeyInfo
-		)
+		pem_private = private_key.private_bytes(encoding=serialization.Encoding.PEM, format=serialization.PrivateFormat.PKCS8, encryption_algorithm=serialization.NoEncryption())
+		pem_public = public_key.public_bytes(encoding=serialization.Encoding.PEM, format=serialization.PublicFormat.SubjectPublicKeyInfo)
 
 		message = input(Fore.CYAN + Style.BRIGHT + "Write text to sign: ").encode('UTF-8')
-		signature = private_key.sign(
-			message,
-			ec.ECDSA(hashes.SHA256())
-		)
-		try:
-			public_key.verify(signature, message, ec.ECDSA(hashes.SHA256()))
-			is_valid = True
-		except Exception:
-			is_valid = False
+
+		signature = private_key.sign(message, ec.ECDSA(hashes.SHA256))
 			
 		print(Fore.GREEN + Style.BRIGHT + f"\n[+] Private Key (PEM):\n{pem_private.decode('utf-8')}")
 		print(Fore.GREEN + Style.BRIGHT + f"\n[+] Public Key (PEM):\n{pem_public.decode('utf-8')}")

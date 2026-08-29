@@ -4,6 +4,7 @@ from modules.ui import print_banner
 
 init(autoreset=True)
 
+
 def run_hash():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
@@ -16,26 +17,29 @@ def run_hash():
 		║ 6. Blake2b  ║
 		╚═════════════╝
 		""")
+
+	hash_functions = {
+		1: hashlib.md5,
+		2: hashlib.sha1,
+		3: hashlib.sha256,
+		4: hashlib.sha3_384,
+		5: hashlib.sha3_512,
+		6: hashlib.blake2b
+	}
+
 	while True:
 		try:
 			choice = int(input(Fore.CYAN + Style.BRIGHT + "Write a hash func. number: "))
+			if choice not in hash_functions:
+				print(Fore.RED + Style.BRIGHT + "Choose a number from 1 to 6!")
+				continue
 			break
 		except ValueError:
 			print(Fore.RED + Style.BRIGHT + "Error! Write number, not text!")
 
 	text = input(Fore.CYAN + Style.BRIGHT + "Write your phrase: ").encode('utf-8')
 
-	if choice == 1:
-		print(Fore.GREEN + Style.BRIGHT + f"Result: {hashlib.md5(text).hexdigest()}")
-	elif choice == 2:
-		print(Fore.GREEN + Style.BRIGHT+ f"Result: {hashlib.sha1(text).hexdigest()}")
-	elif choice == 3:
-		print(Fore.GREEN + Style.BRIGHT + f"Result: {hashlib.sha256(text).hexdigest()}")
-	elif choice == 4:
-		print(Fore.GREEN + Style.BRIGHT + f"Result: {hashlib.sha3_384(text).hexdigest()}")
-	elif choice == 5:
-		print(Fore.GREEN + Style.BRIGHT + f"Result: {hashlib.sha3_512(text).hexdigest()}")
-	elif choice == 6:
-		print(Fore.GREEN + Style.BRIGHT + f"Result: {hashlib.blake2b(text).hexdigest()}")
-	else:
-		print(Fore.RED + Style.BRIGHT + "Choose number's 1-6.")
+	hash_function = hash_functions[choice]
+	result = hash_function(text).hexdigest()
+
+	print(Fore.GREEN + Style.BRIGHT + f"Result: {result}")

@@ -24,12 +24,12 @@ def run_decryptsym():
 
 	if choice == 1:
 		try:
-			nonce = bytes.fromhex(input("Nonce (hex): "))
+			iv = bytes.fromhex(input("iv (hex): "))
 			ciphertext = bytes.fromhex(input("Ciphertext (hex): "))
 			key = bytes.fromhex(input("Key (hex): "))
 
 			aesgcm = AESGCM(key)
-			plaintext = aesgcm.decrypt(nonce, ciphertext, None)
+			plaintext = aesgcm.decrypt(iv, ciphertext, None)
 
 			print(Fore.GREEN + Style.BRIGHT + f"Text: {plaintext.decode('UTF-8')}")
 

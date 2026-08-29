@@ -21,16 +21,16 @@ def run_cryptosym():
 			print(Fore.RED + Style.BRIGHT + "Error! Write number, not text")
 
 	if choice == 1:
-		IV = os.urandom(16)
+		iv = os.urandom(16)
 		text = input(Fore.CYAN + Style.BRIGHT + "Write your text: ")
 		text_bytes = text.encode("UTF-8")
 
 		key = AESGCM.generate_key(bit_length=256)
 
 		aesgcm = AESGCM(key)
-		ciphertext = aesgcm.encrypt(IV, text_bytes, None)
+		ciphertext = aesgcm.encrypt(iv, text_bytes, None)
 
-		print(Fore.GREEN + Style.BRIGHT + f"IV (hex): {IV.hex()}")
+		print(Fore.GREEN + Style.BRIGHT + f"IV (hex): {iv.hex()}")
 		print(Fore.GREEN + Style.BRIGHT + f"Ciphertext (hex): {ciphertext.hex()}")
 		print(Fore.GREEN + Style.BRIGHT + f"Key (hex): {key.hex()}")
 

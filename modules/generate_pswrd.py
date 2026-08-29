@@ -7,12 +7,16 @@ init(autoreset=True)
 
 def run_genpswrd():
 	print_banner()
-	Alphabet = string.ascii_letters + string.digits + "!@#$%^&*()_+-="
-	try:
-		length = int(input(Fore.CYAN + Style.BRIGHT + "Write a length of password: "))
-	except ValueError:
-		print(Fore.RED + Style.BRIGHT + "Write a number!")
-		return
+	alphabet = string.ascii_letters + string.digits + "!@#$%^&*()_+-="
 
-	password = "".join(secrets.choice(Alphabet) for _ in range(length))
+	while True:
+		try:
+			length = int(input(Fore.CYAN + Style.BRIGHT + "Write a length of password: "))
+			if length > 0:
+				break
+			print(Fore.RED + Style.BRIGHT + "Length must be greater than 0!")
+		except ValueError:
+			print(Fore.RED + Style.BRIGHT + "Write a number!")
+
+	password = "".join(secrets.choice(alphabet) for _ in range(length))
 	print(Fore.GREEN + Style.BRIGHT + f"Your password is: {password}")
