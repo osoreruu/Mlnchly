@@ -1,3 +1,4 @@
-colorama==0.4.6
-cryptography==50.0.0
-fake_useragent==2.2.0
+colorama
+cryptography
+fake_useragent
+httpx
