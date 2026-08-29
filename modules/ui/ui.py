@@ -1,0 +1,14 @@
+from colorama import Fore, Style, init
+
+init(autoreset=True)
+
+def print_banner():
+	print(Fore.MAGENTA + Style.BRIGHT + """
+ ▄▀▀▄ ▄▀▄  ▄▀▀▀▀▄      ▄▀▀▄ ▀▄  ▄▀▄▄▄▄   ▄▀▀▄ ▄▄   ▄▀▀▀▀▄  ▄▀▀▄ ▀▀▄
+█  █ ▀  █ █    █      █  █ █ █ █ █    ▌ █  █   ▄▀ █    █  █   ▀▄ ▄▀
+▐  █    █ ▐    █      ▐  █  ▀█ ▐ █      ▐  █▄▄▄█  ▐    █  ▐     █  
+  █    █      █         █   █    █         █   █      █         █  
+▄▀   ▄▀     ▄▀▄▄▄▄▄▄▀ ▄▀   █    ▄▀▄▄▄▄▀   ▄▀  ▄▀    ▄▀▄▄▄▄▄▄▀ ▄▀   
+█    █      █         █    ▐   █     ▐   █   █      █         █    
+▐    ▐      ▐         ▐        ▐         ▐   ▐      ▐         ▐                            
+	""")

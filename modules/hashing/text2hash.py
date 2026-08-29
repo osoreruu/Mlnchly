@@ -1,6 +1,6 @@
 import hashlib
 from colorama import init, Fore, Style
-from modules.ui import print_banner
+from modules.ui.ui import print_banner
 
 init(autoreset=True)
 

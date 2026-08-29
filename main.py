@@ -1,15 +1,15 @@
 from colorama import init, Fore, Style
-from modules.text2hash import run_hash
-from modules.symmetric_cipher import run_cryptosym
-from modules.asymmetric_cipher import run_cryptoasy
-from modules.ui import print_banner
-from modules.decrypt_sym import run_decryptsym
-from modules.decrypt_asy import run_decryptasy
-from modules.generate_pswrd import run_genpswrd
-from modules.bruteforce import run_brtfrce
-from modules.generate_UA import run_genUA
-from modules.robots_parser import run_robots_parser
-from modules.portscanner import run_portscnnr
+from modules.hashing.text2hash import run_hash
+from modules.crypto.symmetric_cipher import run_cryptosym
+from modules.crypto.asymmetric_cipher import run_cryptoasy
+from modules.crypto.decrypt_sym import run_decryptsym
+from modules.crypto.decrypt_asy import run_decryptasy
+from modules.ui.ui import print_banner
+from modules.generators.generate_pswrd import run_genpswrd
+from modules.generators.generate_UA import run_genUA
+from modules.network.robots_parser import run_robots_parser
+from modules.network.portscanner import run_portscnnr
+from modules.attack.bruteforce import run_brtfrce
 
 init(autoreset=True)
 

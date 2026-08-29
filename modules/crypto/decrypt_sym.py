@@ -1,6 +1,6 @@
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM, ChaCha20Poly1305
 from colorama import init, Fore, Style
-from modules.ui import print_banner
+from modules.ui.ui import print_banner
 
 init(autoreset=True)
 

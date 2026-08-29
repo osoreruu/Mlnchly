@@ -1,5 +1,5 @@
 import socket
-from modules.ui import print_banner
+from modules.ui.ui import print_banner
 from colorama import init, Fore, Style
 
 init(autoreset=True)

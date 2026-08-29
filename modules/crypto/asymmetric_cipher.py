@@ -1,7 +1,7 @@
 from cryptography.hazmat.primitives.asymmetric import rsa, ec, padding
 from cryptography.hazmat.primitives import hashes, serialization
 from colorama import init, Fore, Style
-from modules.ui import print_banner
+from modules.ui.ui import print_banner
 
 init(autoreset=True)
 
