@@ -10,6 +10,7 @@ from modules.generators.generate_UA import run_genUA
 from modules.network.robots_parser import run_robots_parser
 from modules.network.portscanner import run_portscnnr
 from modules.attack.bruteforce import run_brtfrce
+from modules.other.pcinfo import run_infoaboutpc
 
 init(autoreset=True)
 
@@ -27,8 +28,9 @@ def main():
 	  ║ 8. Generate UserAgent                 ║
 	  ║ 9. robots.txt and sitemap.xml parser  ║
 	  ║ 10. Port Scanner                      ║
-	  ║ 11. About	                          ║
-	  ║ 12. Credits                           ║
+	  ║ 11. Info of your PC (needs sudo)      ║
+	  ║ 12. About	                          ║
+	  ║ 13. Credits                           ║
 	  ╚═══════════════════════════════════════╝
 		""")
 
@@ -53,11 +55,12 @@ def main():
 		8: run_genUA,
 		9: run_robots_parser,
 		10: run_portscnnr,
-		11: lambda: print(Fore.CYAN + Style.BRIGHT + """
+		11: run_infoaboutpc,
+		12: lambda: print(Fore.CYAN + Style.BRIGHT + """
 			Mlnchly is a Python tool for working with hashes and cryptography; 
 			it supports a wide range of algorithms and handles both encryption and decryption.
 		"""),
-		12: lambda: print(Fore.CYAN + Style.BRIGHT + """
+		13: lambda: print(Fore.CYAN + Style.BRIGHT + """
 			Sole creator: deferred. 
 			DM: Telegram @ddeferred
 		""")
