@@ -16,20 +16,20 @@ init(autoreset=True)
 def main():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
-	  ╔═══════════════════════╗
-	  ║ 1. Text2Hash          ║
-	  ║ 2. SymmetricCrypt     ║
-	  ║ 3. AsymmetricCrypt    ║
-	  ║ 4. SymmetricDecrypt   ║
-	  ║ 5. AsymmetricDecrypt  ║
-	  ║ 6. GeneratePassword   ║
-	  ║ 7. BruteForcer        ║
-	  ║ 8. Generate UserAgent ║
-	  ║ 9. Robots.txt parser  ║
-	  ║ 10. Port Scanner      ║
-	  ║ 11. About	          ║
-	  ║ 12. Credits           ║
-	  ╚═══════════════════════╝
+	  ╔═══════════════════════════════════════╗
+	  ║ 1. Text2Hash                          ║
+	  ║ 2. SymmetricCrypt                     ║
+	  ║ 3. AsymmetricCrypt                    ║
+	  ║ 4. SymmetricDecrypt                   ║
+	  ║ 5. AsymmetricDecrypt                  ║
+	  ║ 6. GeneratePassword                   ║
+	  ║ 7. BruteForcer                        ║
+	  ║ 8. Generate UserAgent                 ║
+	  ║ 9. robots.txt and sitemap.xml parser  ║
+	  ║ 10. Port Scanner                      ║
+	  ║ 11. About	                          ║
+	  ║ 12. Credits                           ║
+	  ╚═══════════════════════════════════════╝
 		""")
 
 	while True:

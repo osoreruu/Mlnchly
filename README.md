@@ -53,7 +53,3 @@ Distributed under the **GPLv3**.
 ---
 
 All code writed in **Sublime Text 4**, **OS** - **Arch Linux**
-
----
-
-**DOCUMENTATION**
