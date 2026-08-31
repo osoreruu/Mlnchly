@@ -10,7 +10,7 @@ from modules.generators.generate_UA import run_genUA
 from modules.network.robots_parser import run_robots_parser
 from modules.network.portscanner import run_portscnnr
 from modules.attack.bruteforce import run_brtfrce
-from modules.other.pcinfo import run_infoaboutpc
+from modules.other.pcinfo import run_HWIDGnrtr
 
 init(autoreset=True)
 
@@ -19,16 +19,16 @@ def main():
 	print(Fore.CYAN + Style.BRIGHT + """
 	  ╔═══════════════════════════════════════╗
 	  ║ 1. Text2Hash                          ║
-	  ║ 2. SymmetricCrypt                     ║
-	  ║ 3. AsymmetricCrypt                    ║
-	  ║ 4. SymmetricDecrypt                   ║
-	  ║ 5. AsymmetricDecrypt                  ║
-	  ║ 6. GeneratePassword                   ║
-	  ║ 7. BruteForcer                        ║
+	  ║ 2. Symmetric Crypt                    ║
+	  ║ 3. Asymmetric Crypt                   ║
+	  ║ 4. Symmetric Decrypt                  ║
+	  ║ 5. Asymmetric Decrypt                 ║
+	  ║ 6. Generate Password                  ║
+	  ║ 7. Brute Forcer                       ║
 	  ║ 8. Generate UserAgent                 ║
 	  ║ 9. robots.txt and sitemap.xml parser  ║
 	  ║ 10. Port Scanner                      ║
-	  ║ 11. Info of your PC (needs sudo)      ║
+	  ║ 11. HWID Generating                   ║
 	  ║ 12. About	                          ║
 	  ║ 13. Credits                           ║
 	  ╚═══════════════════════════════════════╝
@@ -37,8 +37,8 @@ def main():
 	while True:
 		try:
 			choice = int(input(Fore.CYAN + Style.BRIGHT + "Select function: "))
-			if choice not in range(1, 13):
-				print(Fore.RED + Style.BRIGHT + "Choose function 1-12!")
+			if choice not in range(1, 14):
+				print(Fore.RED + Style.BRIGHT + "Choose function 1-13!")
 				continue
 			break
 		except ValueError:
@@ -55,7 +55,7 @@ def main():
 		8: run_genUA,
 		9: run_robots_parser,
 		10: run_portscnnr,
-		11: run_infoaboutpc,
+		11: run_HWIDGnrtr,
 		12: lambda: print(Fore.CYAN + Style.BRIGHT + """
 			Mlnchly is a Python tool for working with hashes and cryptography; 
 			it supports a wide range of algorithms and handles both encryption and decryption.
