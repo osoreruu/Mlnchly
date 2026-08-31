@@ -8,14 +8,12 @@ init(autoreset=True)
 def run_hash():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
-		╔═════════════╗
-		║ 1. MD5      ║
-		║ 2. SHA1     ║
-		║ 3. SHA256   ║
-		║ 4. SHA3_384 ║
-		║ 5. SHA3_512 ║
-		║ 6. Blake2b  ║
-		╚═════════════╝
+		[1] MD5
+		[2] SHA1
+		[3] SHA256
+		[4] SHA3_384
+		[5] SHA3_512
+		[6] Blake2b
 		""")
 
 	hash_functions = {

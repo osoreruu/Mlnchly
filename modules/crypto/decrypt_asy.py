@@ -8,10 +8,8 @@ init(autoreset=True)
 def run_decryptasy():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
-	  ╔═══════════════════════════════════╗
-	  ║ 1. RSA2048 (Decrypt)              ║
-	  ║ 2. ECDSA P256 (Verify Signature)  ║
-	  ╚═══════════════════════════════════╝
+		[1] RSA2048 (Decrypt)
+		[2] ECDSA P256 (Verify Signature)
 		""")
 	while True:
 		try:

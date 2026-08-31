@@ -9,10 +9,8 @@ def run_decryptsym():
 	print_banner()
 
 	print(Fore.CYAN + Style.BRIGHT + """
-	  ╔══════════════════════════╗
-	  ║ 1. AES-256-GCM           ║
-	  ║ 2. ChaCha20-Poly1305     ║
-	  ╚══════════════════════════╝
+		[1] AES-256-GCM
+		[2] ChaCha20-Poly1305
 		""")
 
 	while True:

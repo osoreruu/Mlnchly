@@ -9,10 +9,8 @@ init(autoreset=True)
 def run_brtfrce():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
-	  ╔═══════════════════════════════════╗
-	  ║ 1. Dictionary Brute (RockYou.txt) ║
-	  ║ 2. Base Brute-Force               ║
-	  ╚═══════════════════════════════════╝
+		[1] Dictionary Brute (RockYou.txt)
+		[2] Base Brute-Force
 		""")
 
 	hash_functions = {
@@ -39,18 +37,15 @@ def run_brtfrce():
 
 		if not path:
 			path = "rockyou/rockyou.txt"
-
 		basehash = input(Fore.CYAN + Style.BRIGHT + "Write your hash to Dictionary Brute: ").strip().lower()
 
 		print(Fore.CYAN + Style.BRIGHT + """
-		  ╔═════════════╗
-		  ║ 1. MD5      ║
-		  ║ 2. SHA1     ║
-		  ║ 3. SHA256   ║
-		  ║ 4. SHA3_384 ║
-		  ║ 5. SHA3_512 ║
-		  ║ 6. Blake2b  ║
-		  ╚═════════════╝
+			[1] MD5
+			[2] SHA1
+			[3] SHA256
+			[4] SHA3_384
+			[5] SHA3_512
+			[6] Blake2b
 			""")
 
 		while True:
@@ -60,7 +55,6 @@ def run_brtfrce():
 				if algochoice not in range(1, 7):
 					print(Fore.RED + Style.BRIGHT + "Choose from 1 to 6!")
 					continue
-
 				break
 			except ValueError:
 				print(Fore.RED + Style.BRIGHT + "Select number, not text.")
@@ -91,14 +85,12 @@ def run_brtfrce():
 		basehash = input(Fore.CYAN + Style.BRIGHT + "Write your hash to Base Brute-Force: ").strip().lower()
 
 		print(Fore.CYAN + Style.BRIGHT + """
-		  ╔═════════════╗
-		  ║ 1. MD5      ║
-		  ║ 2. SHA1     ║
-		  ║ 3. SHA256   ║
-		  ║ 4. SHA3_384 ║
-		  ║ 5. SHA3_512 ║
-		  ║ 6. Blake2b  ║
-		  ╚═════════════╝
+			[1] MD5
+			[2] SHA1
+			[3] SHA256
+			[4] SHA3_384
+			[5] SHA3_512
+			[6] Blake2b
 			""")
 
 		while True:
@@ -108,7 +100,6 @@ def run_brtfrce():
 				if algochoice not in range(1, 7):
 					print(Fore.RED + Style.BRIGHT + "Choose from 1 to 6!")
 					continue
-
 				break
 			except ValueError:
 				print(Fore.RED + Style.BRIGHT + "Select number, not text.")
@@ -120,7 +111,6 @@ def run_brtfrce():
 				if min_len < 1:
 					print(Fore.RED + Style.BRIGHT + "Length must be greater than 0!")
 					continue
-
 				break
 			except ValueError:
 				print(Fore.RED + Style.BRIGHT + "Select number, not text.")

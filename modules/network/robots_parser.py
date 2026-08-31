@@ -9,10 +9,8 @@ ua = UserAgent()
 
 def run_robots_parser():
 	print("""
-   ╔══════════════════════╗
-   ║ 1. Parse robots.txt  ║
-   ║ 2. Parse sitemap.xml ║
-   ╚══════════════════════╝
+		[1] Parse robots.txt
+		[2] Parse sitemap.xml
 	""")
 	try:
 		choice = int(input(Fore.CYAN + Style.BRIGHT + "Select what to parse: "))

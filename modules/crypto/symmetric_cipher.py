@@ -8,10 +8,8 @@ init(autoreset=True)
 def run_cryptosym():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
-	  ╔═════════════════════╗
-	  ║ 1. AES256-GCM       ║
-	  ║ 2. ChaCha20Poly1305 ║
-	  ╚═════════════════════╝
+		[1] AES-256-GCM
+		[2] ChaCha20-Poly1305
 		""")
 	while True:
 		try:
@@ -30,9 +28,11 @@ def run_cryptosym():
 		aesgcm = AESGCM(key)
 		ciphertext = aesgcm.encrypt(iv, text_bytes, None)
 
+		with open("Key_AES.txt", 'w', encoding='UTF-8') as f:
+			f.write(key.hex() + "\n")
 		print(Fore.GREEN + Style.BRIGHT + f"IV (hex): {iv.hex()}")
 		print(Fore.GREEN + Style.BRIGHT + f"Ciphertext (hex): {ciphertext.hex()}")
-		print(Fore.GREEN + Style.BRIGHT + f"Key (hex): {key.hex()}")
+		print(Fore.GREEN + Style.BRIGHT + "Key generated in Key_AES.txt")
 
 	elif choice == 2:
 		nonce = os.urandom(12)
@@ -44,6 +44,8 @@ def run_cryptosym():
 		cipher = ChaCha20Poly1305(key)
 		encrypted_data = cipher.encrypt(nonce, text_bytes, None)
 
+		with open("Key_ChaCha.txt", 'w', encoding='UTF-8') as f:
+			f.write(key.hex() + "\n")
 		print(Fore.GREEN + Style.BRIGHT + f"Nonce (hex): {nonce.hex()}")
 		print(Fore.GREEN + Style.BRIGHT + f"Ciphertext (hex): {encrypted_data.hex()}")
-		print(Fore.GREEN + Style.BRIGHT + f"Key (hex): {key.hex()}")
+		print(Fore.GREEN + Style.BRIGHT + "Key generated in Key_ChaCha.txt")
