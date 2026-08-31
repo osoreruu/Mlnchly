@@ -15,8 +15,9 @@ from modules.other.pcinfo import run_HWIDGnrtr
 init(autoreset=True)
 
 def main():
-	print_banner()
-	print(Fore.CYAN + Style.BRIGHT + """
+	while True:
+		print_banner()
+		print(Fore.CYAN + Style.BRIGHT + """
 	  ╔═══════════════════════════════════════╗
 	  ║ 1. Text2Hash                          ║
 	  ║ 2. Symmetric Crypt                    ║
@@ -32,41 +33,41 @@ def main():
 	  ║ 12. About	                          ║
 	  ║ 13. Credits                           ║
 	  ╚═══════════════════════════════════════╝
-		""")
+			""")
 
-	while True:
-		try:
-			choice = int(input(Fore.CYAN + Style.BRIGHT + "Select function: "))
-			if choice not in range(1, 14):
-				print(Fore.RED + Style.BRIGHT + "Choose function 1-13!")
-				continue
-			break
-		except ValueError:
-			print(Fore.RED + Style.BRIGHT + "Error! Write number, not text")
+		while True:
+			try:
+				choice = int(input(Fore.CYAN + Style.BRIGHT + "Select function: "))
+				if choice not in range(1, 14):
+					print(Fore.RED + Style.BRIGHT + "Choose function 1-13!")
+					continue
+				break
+			except ValueError:
+				print(Fore.RED + Style.BRIGHT + "Error! Write number, not text")
 
-	functions = {
-		1: run_hash,
-		2: run_cryptosym,
-		3: run_cryptoasy,
-		4: run_decryptsym,
-		5: run_decryptasy,
-		6: run_genpswrd,
-		7: run_brtfrce,
-		8: run_genUA,
-		9: run_robots_parser,
-		10: run_portscnnr,
-		11: run_HWIDGnrtr,
-		12: lambda: print(Fore.CYAN + Style.BRIGHT + """
-			Mlnchly is a Python tool for working with hashes and cryptography; 
-			it supports a wide range of algorithms and handles both encryption and decryption.
-		"""),
-		13: lambda: print(Fore.CYAN + Style.BRIGHT + """
-			Sole creator: deferred. 
-			DM: Telegram @ddeferred
-		""")
-	}
-
-	functions[choice]()
+		functions = {
+			1: run_hash,
+			2: run_cryptosym,
+			3: run_cryptoasy,
+			4: run_decryptsym,
+			5: run_decryptasy,
+			6: run_genpswrd,
+			7: run_brtfrce,
+			8: run_genUA,
+			9: run_robots_parser,
+			10: run_portscnnr,
+			11: run_HWIDGnrtr,
+			12: lambda: print(Fore.CYAN + Style.BRIGHT + """
+				Mlnchly is a Python tool for working with hashes and cryptography; 
+				it supports a wide range of algorithms and handles both encryption and decryption.
+				"""),
+			13: lambda: print(Fore.CYAN + Style.BRIGHT + """
+				Sole creator: deferred. 
+				DM: Telegram @ddeferred
+			"""),
+		}
+	
+		functions[choice]()
 
 if __name__ == "__main__":
 	main()
