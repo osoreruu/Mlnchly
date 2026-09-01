@@ -1,4 +1,3 @@
-from colorama import init, Fore, Style
 from modules.hashing.text2hash import run_hash
 from modules.crypto.symmetric_cipher import run_cryptosym
 from modules.crypto.asymmetric_cipher import run_cryptoasy
@@ -9,8 +8,10 @@ from modules.generators.generate_pswrd import run_genpswrd
 from modules.generators.generate_UA import run_genUA
 from modules.network.robots_parser import run_robots_parser
 from modules.network.portscanner import run_portscnnr
+from modules.network.ipcalculator import run_ipclcltr
 from modules.attack.bruteforce import run_brtfrce
 from modules.other.pcinfo import run_HWIDGnrtr
+from colorama import init, Fore, Style
 
 init(autoreset=True)
 
@@ -29,15 +30,16 @@ def main():
 			[9] Robots.txt and sitemap.xml parser
 			[10] Port Scanner
 			[11] HWID Generating
-			[12] About
-			[13] Credits
+			[12] IP Calculator
+			[13] About
+			[14] Credits
 			""")
 
 		while True:
 			try:
 				choice = int(input(Fore.CYAN + Style.BRIGHT + "Select function: "))
-				if choice not in range(1, 14):
-					print(Fore.RED + Style.BRIGHT + "Choose function 1-13!")
+				if choice not in range(1, 15):
+					print(Fore.RED + Style.BRIGHT + "Choose function 1-14!")
 					continue
 				break
 			except ValueError:
@@ -55,11 +57,11 @@ def main():
 			9: run_robots_parser,
 			10: run_portscnnr,
 			11: run_HWIDGnrtr,
-			12: lambda: print(Fore.CYAN + Style.BRIGHT + """
-				Mlnchly is a Python tool for working with hashes and cryptography; 
-				it supports a wide range of algorithms and handles both encryption and decryption.
-				"""),
+			12: run_ipclcltr,
 			13: lambda: print(Fore.CYAN + Style.BRIGHT + """
+				Mlnchly - multitool with a lot of instruments for various purposes.
+				"""),
+			14: lambda: print(Fore.CYAN + Style.BRIGHT + """
 				Sole creator: deferred. 
 				DM: Telegram @ddeferred
 			"""),

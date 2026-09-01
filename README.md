@@ -39,8 +39,9 @@ Then select **desired** tool by numbers
 **Hashing**: **MD5**, **SHA1**, **SHA256**, **SHA3_384**, **SHA3_512**, **Blake2b** **Symmetric Encrypt**: **AES256GCM**, **ChaCha20Poly1305** **Asymmetric** 
 Encrypt: **RSA2048**, **ECC256** **Decrypting** of **Symmetric and Asymmetric Encryption's** **Generating password** of every length, used safe **import 
 secrets**. **Brute-Forcing** password with **RockYou.txt** and dump method. **Generating UserAgents** with **fake_useragent** library. **Parser of robots.txt and 
-sitemap.xml** with requests for parsing file used for other parsers. **Port Scanner** using for scan port and determine whether it is open or not. **HWID 
-Generatorr** generating your **HWID** by **Board Serial**, **Product Serial** and **Product UUID**
+sitemap.xml** with requests for parsing file used for other parsers. **Port Scanner** using for scan port and determine whether it is open or not. 
+**HWID Generator** generating your **HWID** by **Board Serial**, **Product Serial** and **Product UUID**
+**IP Address calculator** Automatic calculation of total addresses in the range. Netmask and wildcard mask resolution. Network and broadcast address detection. Automatic extraction of the first available host for use as a gateway.
 
 ---
 

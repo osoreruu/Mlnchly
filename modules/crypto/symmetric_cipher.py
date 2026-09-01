@@ -19,7 +19,7 @@ def run_cryptosym():
 			print(Fore.RED + Style.BRIGHT + "Error! Write number, not text")
 
 	if choice == 1:
-		iv = os.urandom(16)
+		iv = os.urandom(12)
 		text = input(Fore.CYAN + Style.BRIGHT + "Write your text: ")
 		text_bytes = text.encode("UTF-8")
 
