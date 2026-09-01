@@ -1,4 +1,4 @@
-[![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen?style=for-the-badge&logo=pytest)](https://github.com/osoreruu/Mlnchly)   ![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg)   ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)   ![Repo Size](https://img.shields.io/github/repo-size/osoreruu/Mlnchly)   ![OS Support](https://img.shields.io/badge/os-linux-lightgrey)
+![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg)   ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)   ![Repo Size](https://img.shields.io/github/repo-size/osoreruu/Mlnchly)   ![OS Support](https://img.shields.io/badge/os-linux-lightgrey)
 
 **Mlnchly** is a **multitool** created using the **Python** programming language it's full functionality is described below.
 
@@ -52,3 +52,9 @@ Distributed under the **GPLv3**.
 ---
 
 All code writed in **Sublime Text 4**, **OS** - **Arch Linux**
+
+---
+
+**TESTS**
+
+**Tests** from **/tests/test_all.py** showed that the entire code executes correctly and without errors.
