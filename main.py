@@ -6,7 +6,8 @@ from modules.crypto.decrypt_asy import run_decryptasy
 from modules.ui.ui import print_banner
 from modules.generators.generate_pswrd import run_genpswrd
 from modules.generators.generate_UA import run_genUA
-from modules.network.robots_parser import run_robots_parser
+from modules.generators.generate_UUID import run_uuid_gnrtr
+from modules.network.parser import run_parser
 from modules.network.portscanner import run_portscnnr
 from modules.network.ipcalculator import run_ipclcltr
 from modules.attack.bruteforce import run_brtfrce
@@ -31,8 +32,9 @@ def main():
 			[10] Port Scanner
 			[11] HWID Generating
 			[12] IP Calculator
-			[13] About
-			[14] Credits
+			[13] UUID Generator
+			[14] About
+			[15] Credits
 			""")
 
 		while True:
@@ -54,14 +56,15 @@ def main():
 			6: run_genpswrd,
 			7: run_brtfrce,
 			8: run_genUA,
-			9: run_robots_parser,
+			9: run_parser,
 			10: run_portscnnr,
 			11: run_HWIDGnrtr,
 			12: run_ipclcltr,
-			13: lambda: print(Fore.CYAN + Style.BRIGHT + """
+			13: run_uuid_gnrtr,
+			14: lambda: print(Fore.CYAN + Style.BRIGHT + """
 				Mlnchly - multitool with a lot of instruments for various purposes.
 				"""),
-			14: lambda: print(Fore.CYAN + Style.BRIGHT + """
+			15: lambda: print(Fore.CYAN + Style.BRIGHT + """
 				Sole creator: deferred. 
 				DM: Telegram @ddeferred
 			"""),

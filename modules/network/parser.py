@@ -7,7 +7,7 @@ init(autoreset=True)
 ua = UserAgent()
 
 
-def run_robots_parser():
+def run_parser():
 	print("""
 		[1] Parse robots.txt
 		[2] Parse sitemap.xml
