@@ -42,6 +42,8 @@ secrets**. **Brute-Forcing** password with **RockYou.txt** and dump method. **Ge
 sitemap.xml** with requests for parsing file used for other parsers. **Port Scanner** using for scan port and determine whether it is open or not. 
 **HWID Generator** generating your **HWID** by **Board Serial**, **Product Serial** and **Product UUID**
 **IP Address calculator** Automatic calculation of total addresses in the range. Netmask and wildcard mask resolution. Network and broadcast address detection. Automatic extraction of the first available host for use as a gateway.
+**Phone Checker** outputing Operator, Timezones, etc.
+**DNS Checker** outputing A, AAAA, TXT, MX, etc.
 
 ---
 
@@ -51,10 +53,4 @@ Distributed under the **GPLv3**.
 
 ---
 
-All code writed in **Sublime Text 4**, **OS** - **Arch Linux**
-
----
-
-**TESTS**
-
-**Tests** from **/tests/test_all.py** showed that the entire code executes correctly and without errors.
+All code writed in **Sublime Text 4**, **OS** - **Arch Linux**.
