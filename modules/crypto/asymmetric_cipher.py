@@ -31,7 +31,7 @@ def run_cryptoasy():
 			return
 			
 		ciphertext = public_key.encrypt(message, padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA256()), algorithm=hashes.SHA256(), label=None))
-		with open("pem_private_rsa.pem", 'w', encoding='UTF-8') as f:
+		with open("output/pem_private_rsa.pem", 'w', encoding='UTF-8') as f:
 			f.write(f"{pem_private.decode('UTF-8')}")
 		print(Fore.GREEN + Style.BRIGHT + f"Public Key (PEM):\n {pem_public.decode('utf-8')}")
 		print(Fore.GREEN + Style.BRIGHT + f"Ciphertext (hex):\n {ciphertext.hex()}")
@@ -47,7 +47,7 @@ def run_cryptoasy():
 
 		signature = private_key.sign(message, ec.ECDSA(hashes.SHA256()))
 
-		with open("pem_private_ecdsa.pem", 'w', encoding='UTF-8') as f:
+		with open("output/pem_private_ecdsa.pem", 'w', encoding='UTF-8') as f:
 			f.write(f"{pem_private.decode('UTF-8')}")
 		print(Fore.GREEN + Style.BRIGHT + f"Public Key (PEM):\n {pem_public.decode('utf-8')}")
 		print(Fore.GREEN + Style.BRIGHT + f"Signature (hex):\n {signature.hex()}")

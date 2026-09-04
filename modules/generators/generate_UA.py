@@ -15,7 +15,7 @@ def run_genUA():
 			print(Fore.RED + Style.BRIGHT + "Length must be greater than 0!")
 		except ValueError:
 			print(Fore.RED + Style.BRIGHT + "Write a number. Not text.")
-	with open("useragents.txt", "w", encoding="utf-8") as f:
+	with open("output/useragents.txt", "w", encoding="utf-8") as f:
 		for _ in range(1, count + 1):
 			f.write(ua.random + "\n")
 	print(Fore.GREEN + Style.BRIGHT + f"{count} UserAgent generated! UA writed in useragents.txt")

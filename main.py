@@ -40,8 +40,8 @@ def main():
 		while True:
 			try:
 				choice = int(input(Fore.CYAN + Style.BRIGHT + "Select function: "))
-				if choice not in range(1, 15):
-					print(Fore.RED + Style.BRIGHT + "Choose function 1-14!")
+				if choice not in range(1, 16):
+					print(Fore.RED + Style.BRIGHT + "Choose function 1-15!")
 					continue
 				break
 			except ValueError:

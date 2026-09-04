@@ -28,7 +28,7 @@ def run_cryptosym():
 		aesgcm = AESGCM(key)
 		ciphertext = aesgcm.encrypt(iv, text_bytes, None)
 
-		with open("Key_AES.txt", 'w', encoding='UTF-8') as f:
+		with open("output/Key_AES.txt", 'w', encoding='UTF-8') as f:
 			f.write(key.hex() + "\n")
 		print(Fore.GREEN + Style.BRIGHT + f"IV (hex): {iv.hex()}")
 		print(Fore.GREEN + Style.BRIGHT + f"Ciphertext (hex): {ciphertext.hex()}")
@@ -44,7 +44,7 @@ def run_cryptosym():
 		cipher = ChaCha20Poly1305(key)
 		encrypted_data = cipher.encrypt(nonce, text_bytes, None)
 
-		with open("Key_ChaCha.txt", 'w', encoding='UTF-8') as f:
+		with open("output/Key_ChaCha.txt", 'w', encoding='UTF-8') as f:
 			f.write(key.hex() + "\n")
 		print(Fore.GREEN + Style.BRIGHT + f"Nonce (hex): {nonce.hex()}")
 		print(Fore.GREEN + Style.BRIGHT + f"Ciphertext (hex): {encrypted_data.hex()}")
