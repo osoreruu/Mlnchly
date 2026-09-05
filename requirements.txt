@@ -2,3 +2,5 @@ colorama
 cryptography
 fake_useragent
 httpx
+dnspython
+phonenumbers
