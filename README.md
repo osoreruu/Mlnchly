@@ -44,6 +44,7 @@ sitemap.xml** with requests for parsing file used for other parsers. **Port Scan
 **IP Address calculator** Automatic calculation of total addresses in the range. Netmask and wildcard mask resolution. Network and broadcast address detection. Automatic extraction of the first available host for use as a gateway.
 **Phone Checker** outputing Operator, Timezones, etc.
 **DNS Checker** outputing A, AAAA, TXT, MX, etc.
+**SMTP Checker** checks does email exists
 
 ---
 
