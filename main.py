@@ -22,15 +22,16 @@ def main():
             [13] UUID Generator
             [14] Number checker
             [15] DNS Checker
-            [16] About
-            [17] Credits
+            [16] SMTP Check
+            [17] About
+            [18] Credits
             """)
 
         while True:
             try:
                 choice = int(input(Fore.CYAN + Style.BRIGHT + "Select function: "))
-                if choice not in range(1, 18):
-                    print(Fore.RED + Style.BRIGHT + "Choose function 1-17!")
+                if choice not in range(1, 19):
+                    print(Fore.RED + Style.BRIGHT + "Choose function 1-18!")
                     continue
                 break
             except ValueError:
@@ -52,10 +53,11 @@ def main():
             13: lambda: __import__("modules.generators.generate_UUID", fromlist=["run_uuid_gnrtr"]).run_uuid_gnrtr(),
             14: lambda: __import__("modules.attack.phonenumber", fromlist=["run_numberphone"]).run_numberphone(),
             15: lambda: __import__("modules.network.dnschecker", fromlist=["run_dnschecker"]).run_dnschecker(),
-            16: lambda: print(Fore.CYAN + Style.BRIGHT + """
+            16: lambda: __import__("modules.attack.SMTP", fromlist=["run_SMTP"]).run_SMTP(),
+            17: lambda: print(Fore.CYAN + Style.BRIGHT + """
                 Mlnchly - multitool with a lot of instruments for various purposes.
                 """),
-            17: lambda: print(Fore.CYAN + Style.BRIGHT + """
+            18: lambda: print(Fore.CYAN + Style.BRIGHT + """
                 Sole creator: deferred. 
                 DM: Telegram @ddeferred
             """),

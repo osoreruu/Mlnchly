@@ -45,7 +45,7 @@ cover/
 *.mo
 *.pot
 
-# Django / Flask / Celery (на будущее)
+# Django / Flask / Celery
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
