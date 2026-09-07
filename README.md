@@ -45,6 +45,7 @@ sitemap.xml** with requests for parsing file used for other parsers. **Port Scan
 **Phone Checker** outputing Operator, Timezones, etc.
 **DNS Checker** outputing A, AAAA, TXT, MX, etc.
 **SMTP Checker** checks does email exists
+**EXIF Checher** checks EXIFs of images
 
 ---
 
