@@ -4,7 +4,7 @@ from colorama import init, Fore, Style
 
 init(autoreset=True)
 
-def run_portscnnr():
+def run_portscanner():
 	print_banner()
 	ip = input(Fore.CYAN + Style.BRIGHT + "Write ipv4 Address you want scan: ").strip()
 	while True:

@@ -1,7 +1,10 @@
 import ipaddress
 from colorama import init, Fore, Style
 from modules.ui.ui import print_banner
-def run_ipclcltr():
+
+init(autoreset=True)
+
+def run_ipcalculator():
 	print_banner()
 	try:
 		usr_input = input(Fore.CYAN + Style.BRIGHT + "Write your IP address with subnet (e.g 192.168.0.0/24): ").strip()

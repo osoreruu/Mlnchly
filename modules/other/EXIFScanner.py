@@ -22,7 +22,7 @@ def run_EXIF_scan():
 			return
 
 		for tag_id, value in exif.items():
-			print(f"Tag [{tag_id}]: {value}")
+			print(Fore.CYAN + Style.BRIGHT + f"Tag [{tag_id}]: {value}")
 
 	except Exception as e:
 		print(Fore.RED + Style.BRIGHT + f"Error: {e}")

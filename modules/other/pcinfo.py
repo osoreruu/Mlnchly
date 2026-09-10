@@ -7,7 +7,7 @@ from colorama import init, Fore, Style
 
 init(autoreset=True)
 
-def run_HWIDGnrtr():
+def run_HWIDGenerator():
 	print_banner()
 	output_file = "pc_info.txt"
 	pc_info = {
@@ -42,7 +42,7 @@ def run_HWIDGnrtr():
 	
 	print(Fore.GREEN + Style.BRIGHT + f"Generated HWID: {generated_hwid}")
 
-	with open(output_file, "w", encoding="utf-8") as f:
+	with open(output/output_file, "w", encoding="utf-8") as f:
 		for key, value in collected_data.items():
 			clean_value = value
 			for color in [Fore.RED, Style.BRIGHT]:

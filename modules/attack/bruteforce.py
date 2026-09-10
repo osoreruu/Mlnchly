@@ -6,7 +6,7 @@ import string
 
 init(autoreset=True)
 
-def run_brtfrce():
+def run_bruteforce():
 	print_banner()
 	print(Fore.CYAN + Style.BRIGHT + """
 		[1] Dictionary Brute (RockYou.txt)

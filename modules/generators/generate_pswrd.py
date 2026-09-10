@@ -5,7 +5,7 @@ import secrets
 
 init(autoreset=True)
 
-def run_genpswrd():
+def run_genpassword():
 	print_banner()
 	alphabet = string.ascii_letters + string.digits + "!@#$%^&*()_+-="
 

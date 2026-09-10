@@ -21,7 +21,7 @@ def run_parser():
 				response = httpx.get(url, timeout=5.0, follow_redirects=True, headers={"User-Agent": ua.random})
 				if response.status_code == 200:
 					print(Fore.GREEN + Style.BRIGHT + "robots.txt is found!")
-					with open(f"output_{site}_robots.txt", "w", encoding="utf-8") as f:
+					with open(f"output/output_{site}_robots.txt", "w", encoding="utf-8") as f:
 						f.write(response.text)
 				else:
 					print(f"robots.txt not found! Error: {response.status_code}")
@@ -34,7 +34,7 @@ def run_parser():
 				response = httpx.get(url, timeout=5.0, follow_redirects=True, headers={"User-Agent": ua.random})
 				if response.status_code == 200:
 					print(Fore.GREEN + Style.BRIGHT + "sitemap.xml is found!")
-					with open(f"output_{site}_sitemap.txt", "w", encoding="utf-8") as f:
+					with open(f"output/output_{site}_sitemap.txt", "w", encoding="utf-8") as f:
 						f.write(response.text)
 				else:
 					print(f"sitemap.xml not found! Error: {response.status_code}")

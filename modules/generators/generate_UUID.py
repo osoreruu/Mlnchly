@@ -4,7 +4,7 @@ from colorama import init, Fore, Style
 
 init(autoreset=True)
 
-def run_uuid_gnrtr():
+def run_uuid_generator():
 	print_banner()
 	while True:
 		try:
@@ -12,7 +12,11 @@ def run_uuid_gnrtr():
 			if count <= 0:
 				print(Fore.RED + Style.BRIGHT + "Write number greater than 0.")
 				continue
-			for _ in range(count):
-				print(Fore.GREEN + Style.BRIGHT + str(uuid.uuid4()))
+			break
 		except ValueError:
-			print(Fore.RED + Style.BRIGHT + "Write number, not text.")	
+			print(Fore.RED + Style.BRIGHT + "Write number, not text.")
+	with open("output/UUIDs.txt", "w", encoding="utf-8") as f:
+		for _ in range(count + 1):
+			f.write(str(uuid.uuid4()) + "\n")
+
+	print(Fore.GREEN + Style.BRIGHT + f"{count} UUIDs Generated!")
